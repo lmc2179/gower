@@ -22,7 +22,7 @@ def similarity(X, types):
             s_matrix = s_matrix + (1.0 - (1.*np.abs(col_matrix - row_matrix) / r_k))
             d_matrix = d_matrix + np.ones(d_matrix.shape)
         elif t == B:
-            s_matrix = s_matrix + (col_matrix + row_matrix) == 2
+            s_matrix = s_matrix + ((col_matrix + row_matrix) == 2)
             d_matrix = d_matrix + (1. - ((col_matrix + row_matrix) == 0))
         elif t == C:
             s_matrix = s_matrix + (col_matrix == row_matrix)

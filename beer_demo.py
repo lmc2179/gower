@@ -16,8 +16,11 @@ df['ibu'] = df['ibu'].apply(float)
 
 print(df.dtypes)
 
-X = df[['abv', 'ibu', 'brewery_id', 'style']]
-D = gower.distance(X.values, ['R', 'R', 'C', 'C'])
+#X = df[['abv', 'ibu', 'brewery_id', 'style']]
+#D = gower.distance(X.values, ['R', 'R', 'C', 'C'])
+
+X = df[['abv', 'ibu', 'brewery_id']]
+D = gower.distance(X.values, ['R', 'R', 'C'])
 
 dim = MDS(dissimilarity='precomputed')
 X_transformed = dim.fit_transform(D)
