@@ -1,4 +1,4 @@
-import gower
+from gower import measure
 import pandas as pd
 import numpy as np
 from sklearn.manifold import MDS
@@ -20,7 +20,7 @@ print(df.dtypes)
 #D = gower.distance(X.values, ['R', 'R', 'C', 'C'])
 
 X = df[['abv', 'ibu', 'brewery_id']]
-D = gower.distance(X.values, ['R', 'R', 'C'])
+D = measure.distance(X.values, ['R', 'R', 'C'])
 
 dim = MDS(dissimilarity='precomputed')
 X_transformed = dim.fit_transform(D)
