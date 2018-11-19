@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 from collections import Counter
 
-df = pd.read_csv('beers.csv')
+df = pd.read_csv('beers.csv') # https://www.kaggle.com/nickhould/craft-cans
 
 df = df[df['abv'].notnull()]
 df = df[df['ibu'].notnull()]

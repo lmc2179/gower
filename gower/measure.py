@@ -28,7 +28,7 @@ def similarity(X, types):
             s_matrix = s_matrix + (col_matrix == row_matrix)
             d_matrix = d_matrix + np.ones(d_matrix.shape)
         else: 
-            raise Exception('unrecognized type')
+            raise Exception('unrecognized type {0}'.format(t))
     return s_matrix / d_matrix
 
 def distance(X, types):
